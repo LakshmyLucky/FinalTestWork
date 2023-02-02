@@ -43,6 +43,22 @@ namespace FinalTestWork
             return count;
         }
 
+        //Формирование результирующего массива
+        static string[] GetArrayOutput(string[] array, int n)
+        {
+            string[] arrayOut = new string[n];
+            int j = 0;
+
+            for (int i = 0; i < array.Length; i++)
+                if (array[i].Length <= 3)
+                {
+                    arrayOut[j] = array[i];
+                    j++;
+                }
+
+            return arrayOut;
+        }
+
         static void Main(string[] args)
         {
             Console.Write("Введите количество строк в массиве: ");
@@ -66,6 +82,10 @@ namespace FinalTestWork
                 Console.WriteLine("Строк, длина которых менее или равна 3, не найдено.");
                 return;
             }
+
+            string[] arrayOutput = GetArrayOutput(arrayInput, countOutputArray);
+            Console.WriteLine("Результирующий массив строк:");
+            PrintArray(arrayOutput);
         }
     }
 }
