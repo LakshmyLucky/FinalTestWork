@@ -22,6 +22,15 @@ namespace FinalTestWork
             return array;
         }
 
+        //Печать массива
+        static void PrintArray(string[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+                Console.WriteLine(array[i]);
+
+            Console.WriteLine();
+        }
+
         static void Main(string[] args)
         {
             Console.Write("Введите количество строк в массиве: ");
@@ -35,6 +44,9 @@ namespace FinalTestWork
             Console.WriteLine();
 
             string[] arrayInput = GetArrayInput(countInputArray);
+
+            Console.WriteLine("Исходный массив строк:");
+            PrintArray(arrayInput);
         }
     }
 }
