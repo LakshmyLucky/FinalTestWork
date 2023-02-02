@@ -31,6 +31,18 @@ namespace FinalTestWork
             Console.WriteLine();
         }
 
+        //Подсчет количества строк, удовлетворяющего условию задачи
+        static int GetCountArrayInput(string[] array)
+        {
+            int count = 0;
+
+            for (int i = 0; i < array.Length; i++)
+                if (array[i].Length <= 3)
+                    count++;
+
+            return count;
+        }
+
         static void Main(string[] args)
         {
             Console.Write("Введите количество строк в массиве: ");
@@ -47,6 +59,13 @@ namespace FinalTestWork
 
             Console.WriteLine("Исходный массив строк:");
             PrintArray(arrayInput);
+
+            int countOutputArray = GetCountArrayInput(arrayInput);
+            if (countOutputArray == 0)
+            {
+                Console.WriteLine("Строк, длина которых менее или равна 3, не найдено.");
+                return;
+            }
         }
     }
 }
